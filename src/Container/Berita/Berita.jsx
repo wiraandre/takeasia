@@ -6,7 +6,7 @@ import Kartu from '../../Component/Kartu/Kartu';
 const Berita = () => {
   return (
     <div>
-      <Headers />
+      {/* <Headers /> */}
       <Kartu />
       <Bottoms />
     </div>

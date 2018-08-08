@@ -4,7 +4,7 @@ import KartuSingular from '../Kartu/KartuSingular/KartusSingular';
 
 export default class Kartu extends Component {
   state = {
-    data: [],
+    datax: [],
     loader: false
   };
   componentDidMount() {
@@ -15,7 +15,7 @@ export default class Kartu extends Component {
       .then(response => {
         console.log(response);
         this.setState({
-          data: response.data,
+          datax: response.data,
           loader: true
         });
       });
@@ -24,7 +24,7 @@ export default class Kartu extends Component {
     return (
       <div>
         {this.state.loader ? (
-          <KartuSingular data={this.state.data} />
+          <KartuSingular data={this.state.datax} />
         ) : (
           <h1>loading...........</h1>
         )}

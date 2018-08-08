@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import Bottom from './Component/Bottom/Bottom';
-
 import Berita from './Container/Berita/Berita';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import BeritaDetail from './Container/BeritaDetail/BeritaDetail';
+import Head from '../src/Component/Header/Header';
+import BeritDetail from './Container/Berita/BeritDetail';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Berita />
+        <Switch>
+          <Route path="/" component={Head} />
+        </Switch>
+
+        <Switch>
+          <Route path="/" exact={true} component={Berita} />
+          <Route path="/:slug" component={BeritDetail} />
+        </Switch>
       </div>
     );
   }
